@@ -1,0 +1,12 @@
+version: "3.3" # docker-compose --version
+services:
+  xapi: # image
+    build: ./app
+    image: xapi:v1
+    working_dir: /xapi
+    container_name: xapi_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./app:/xapi
+      - ./app/node_modules:/xapi/node_modules
