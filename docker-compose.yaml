@@ -1,12 +1,12 @@
 version: "3.3" # docker-compose --version
 services:
-  xapi: # image
+  dockerize_nodejs_api: # image
     build: ./app
-    image: xapi:v1
-    working_dir: /xapi
-    container_name: xapi_c
+    image: dockerize_nodejs_api:v1
+    working_dir: /dockerize_nodejs_api
+    container_name: dockerize_nodejs_api_c
     ports:
       - '4000:4000'
     volumes:
-      - ./app:/xapi
-      - ./app/node_modules:/xapi/node_modules
+      - ./app:/dockerize_nodejs_api
+      - ./app/node_modules:/dockerize_nodejs_api/node_modules

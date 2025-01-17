@@ -1,13 +1,13 @@
 {
-  "name": "xapi",
+  "name": "dockerize_nodejs_api",
   "version": "1.0.0",
   "main": "app.js",
   "keywords": [
-    "xapi"
+    "dockerize_nodejs_api"
   ],
-  "author": "xapi",
+  "author": "dockerize_nodejs_api",
   "license": "ISC",
-  "description": "xapi",
+  "description": "dockerize_nodejs_api",
   "scripts": {
     "dev": "nodemon -L app.js"
   },

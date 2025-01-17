@@ -2,8 +2,8 @@ FROM node:latest
 
 RUN npm i -g nodemon
 
-# run all commands on xapi dir
-WORKDIR /xapi
+# run all commands on dockerize_nodejs_api dir
+WORKDIR /dockerize_nodejs_api
 
 COPY package.json .
 
