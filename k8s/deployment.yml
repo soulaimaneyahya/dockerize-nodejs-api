@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerize-nodejs-api
+  labels:
+    app: dockerize-nodejs-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dockerize-nodejs-api
+  template:
+    metadata:
+      labels:
+        app: dockerize-nodejs-api
+    spec:
+      containers:
+        - name: dockerize-nodejs-api
+          image: soulaimaneyhcodpartner/dockerize_nodejs_api:v1
+          ports:
+            - containerPort: 80
+          env:
+            - name: NODE_ENV
+              value: "production"
+          volumeMounts:
+            - name: app-storage
+              mountPath: /dockerize_nodejs_api
+      volumes:
+        - name: app-storage
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dockerize-nodejs-apiservice
+spec:
+  selector:
+    app: dockerize-nodejs-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP

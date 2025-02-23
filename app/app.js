@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   ]);
 });
 
-const SERVER_PORT = process.env.SERVER_PORT || 4000;
+const SERVER_PORT = process.env.SERVER_PORT || 5500;
 
 app.listen(SERVER_PORT, () => {
   console.log(`listening for requests on port ${SERVER_PORT}`);
