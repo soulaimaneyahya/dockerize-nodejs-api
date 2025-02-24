@@ -10,9 +10,9 @@ RUN npm install
 
 COPY . .
 
-ENV SERVER_PORT=5500
+ENV SERVER_PORT=80
 
-EXPOSE 5500
+EXPOSE 80
 
 # CMD ["node", "app.js"]
 CMD ["npm", "run", "dev"]

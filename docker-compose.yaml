@@ -6,7 +6,7 @@ services:
     working_dir: /dockerize_nodejs_api
     container_name: dockerize_nodejs_api_c
     ports:
-      - '5500:5500'
+      - '80:80'
     volumes:
       - ./app:/dockerize_nodejs_api
       - ./app/node_modules:/dockerize_nodejs_api/node_modules
