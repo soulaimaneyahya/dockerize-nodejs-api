@@ -15,4 +15,3 @@ services:
       - "8080:8080"
     volumes:
       - ./app:/var/www/html
-      - ./app/node_modules:/var/www/html/node_modules

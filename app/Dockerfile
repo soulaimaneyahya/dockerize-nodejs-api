@@ -1,10 +1,10 @@
-FROM node:latest
+FROM node:22
 
 WORKDIR /var/www/html
 
 COPY package.json .
 
-RUN npm install
+RUN npm install --omit=dev
 
 COPY . .
 
