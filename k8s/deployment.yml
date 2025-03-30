@@ -1,3 +1,5 @@
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +20,7 @@ spec:
         - name: dockerize-nodejs-api
           image: soulaimaneyhcodpartner/dockerize_nodejs_api:v1
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           env:
             - name: NODE_ENV
               value: "production"
@@ -30,15 +32,16 @@ spec:
           emptyDir: {}
 
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: dockerize-nodejs-apiservice
+  name: dockerize-nodejs-api-k8s-service
 spec:
   selector:
     app: dockerize-nodejs-api
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 8080
+      targetPort: 8080
   type: ClusterIP
