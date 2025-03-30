@@ -1,19 +1,21 @@
+---
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: dockerize-nodejs-api-service
+  name: dockerize-nodejs-api-k8s-service
   annotations:
     service.beta.kubernetes.io/linode-loadbalancer-throttle: "3"
     service.beta.kubernetes.io/linode-loadbalancer-default-protocol: "tcp"
   labels:
-    app: dockerize-nodejs-api-service
+    app: dockerize-nodejs-api-k8s-service
 spec:
   selector:
     app: dockerize-nodejs-api
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 8080
+      targetPort: 8080
       name: http
   sessionAffinity: None

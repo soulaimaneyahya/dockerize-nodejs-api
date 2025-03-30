@@ -1,12 +1,17 @@
-version: "3.3" # docker-compose --version
+version: "3.8" # docker-compose --version
+
 services:
-  dockerize_nodejs_api: # image
-    build: ./app
-    image: dockerize_nodejs_api:v1
-    working_dir: /dockerize_nodejs_api
-    container_name: dockerize_nodejs_api_c
+  dockerize_nodejs_api_service:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: dockerize_nodejs_api:v1 # image
+    working_dir: /var/www/html
+    container_name: dockerize_nodejs_api_container1
+    env_file:
+      - ./app/.env
+    restart: always
     ports:
-      - '80:80'
+      - "8080:8080"
     volumes:
-      - ./app:/dockerize_nodejs_api
-      - ./app/node_modules:/dockerize_nodejs_api/node_modules
+      - ./app:/var/www/html

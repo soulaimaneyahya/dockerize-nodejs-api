@@ -1,18 +1,13 @@
-FROM node:latest
+FROM node:22
 
-RUN npm i -g nodemon
-
-WORKDIR /app
+WORKDIR /var/www/html
 
 COPY package.json .
 
-RUN npm install
+RUN npm install --omit=dev
 
 COPY . .
 
-ENV SERVER_PORT=80
+EXPOSE ${SERVER_PORT}
 
-EXPOSE 80
-
-# CMD ["node", "app.js"]
 CMD ["npm", "run", "dev"]
