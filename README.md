@@ -1,5 +1,7 @@
 # dockerize-nodejs-api
 
+[![CI-CD](https://github.com/soulaimaneyahya/dockerize-nodejs-api/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/soulaimaneyahya/dockerize-nodejs-api/actions/workflows/ci-cd.yml)
+
 ## Start Docker 🐳
 
 run containers:
